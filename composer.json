@@ -1,4 +1,10 @@
 {
+    "name": "wapmorgan/yii2-inflection",
+    "autoload": {
+        "psr-4": {
+            "wapmorgan\\yii2inflection\\": "src/"
+        }
+    },
     "require": {
         "yiisoft/yii2": "^2.0",
         "wapmorgan/morphos": "^3.2.1"
