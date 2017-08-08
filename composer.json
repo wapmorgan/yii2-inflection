@@ -7,6 +7,6 @@
     },
     "require": {
         "yiisoft/yii2": "^2.0",
-        "wapmorgan/morphos": "^3.2.1"
+        "wapmorgan/morphos": "dev-master"
     }
 }
