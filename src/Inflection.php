@@ -96,7 +96,7 @@ class Inflection extends Component
 	{
 		if (!in_array($case, Inflector::getAllCases()))
 			throw new InvalidArgumentException('Case "'.$case.'" is not supported.');
-		return $this->inflector->inflectName($name, $case);
+		return $this->inflector->inflectGeoName($name, $case);
 	}
 
 	/**

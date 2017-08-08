@@ -27,13 +27,14 @@ class RussianInflector extends Inflector
 
 	public function pluralize($count, $word)
 	{
-		return \morphos\Russian\pluralize($word, $count);
+		return \morphos\Russian\pluralize($count, $word);
 	}
 
 	public function inflectName($name, $case, $gender = null)
 	{
 		$case = static::transformCase($case);
-		$gender = static::transformGender($gender);
+		if ($gender !== null)
+			$gender = static::transformGender($gender);
 		return \morphos\Russian\inflectName($name, $case, $gender);
 	}
 
@@ -53,14 +54,22 @@ class RussianInflector extends Inflector
 	{
 		$case = static::transformCase($case);
 		$gender = static::transformGender($gender);
-		return \morphos\Russian\CardinalNumeralGenerator::getCase($number, $case, $gender);
+		if ($form == self::FULL)
+			return \morphos\Russian\CardinalNumeralGenerator::getCase($number, $case, $gender);
+
+		$cardinal = \morphos\Russian\CardinalNumeralGenerator::getCase($number, $case, $gender);
+		return $number.'-'.\morphos\S::last_position_for_one_of_chars($cardinal, \morphos\Russian\RussianLanguage::$consonants);
 	}
 
 	public function ordinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE)
 	{
 		$case = static::transformCase($case);
 		$gender = static::transformGender($gender);
-		return \morphos\Russian\OrdinalNumeralGenerator::getCase($number, $case, $gender);
+		if ($form == self::FULL)
+			return \morphos\Russian\OrdinalNumeralGenerator::getCase($number, $case, $gender);
+
+		$ordinal = \morphos\Russian\OrdinalNumeralGenerator::getCase($number, $case, $gender);
+		return $number.'-'.\morphos\S::last_position_for_one_of_chars($ordinal, \morphos\Russian\RussianLanguage::$consonants);
 	}
 
 	public function monetize($currency, $value)
@@ -76,14 +85,14 @@ class RussianInflector extends Inflector
 	protected static function transformCase($case)
 	{
 		if (!isset(static::$casesMap[$case]))
-			throw new Exception('Case "'.$case.'" is not supported.');
+			throw new Exception('Case "'.$case.'" is not supported by Russian language.');
 		return static::$casesMap[$case];
 	}
 
 	protected static function transformGender($gender)
 	{
 		if (!isset(static::$gendersMap[$gender]))
-			throw new Exception('Gender "'.$gender.'" is not supported.');
+			throw new Exception('Gender "'.$gender.'" is not supported by Russian language.');
 		return static::$gendersMap[$gender];
 	}
 }
