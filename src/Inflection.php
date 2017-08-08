@@ -1,6 +1,7 @@
 <?php
 namespace wapmorgan\yii2inflection;
 
+use DateInterval;
 use Exception;
 use InvalidArgumentException;
 use Yii;
@@ -70,6 +71,80 @@ class Inflection extends Component
 	{
 		if ($word === null)
 			return $this->inflector->pluralizeWord($countOrWord);
-		return $this->inflector->pluralize($count, $word);
+		return $this->inflector->pluralize($countOrWord, $word);
+	}
+
+	/**
+	 * @param string $name
+	 * @param integer $case
+	 * @param null|integer $gender
+	 * @return string
+	 */
+	public function inflectName($name, $case, $gender = null)
+	{
+		if (!in_array($case, Inflector::getAllCases()))
+			throw new InvalidArgumentException('Case "'.$case.'" is not supported.');
+		return $this->inflector->inflectName($name, $case, $gender);
+	}
+
+	/**
+	 * @param string $name
+	 * @param integer $case
+	 * @return string
+	 */
+	public function inflectGeoName($name, $case)
+	{
+		if (!in_array($case, Inflector::getAllCases()))
+			throw new InvalidArgumentException('Case "'.$case.'" is not supported.');
+		return $this->inflector->inflectName($name, $case);
+	}
+
+	/**
+	 * @param integer $number
+	 * @param integer $form
+	 * @param integer $gender
+	 * @param integer $case
+	 * @return string
+	 */
+	public function cardinalize($number, $form = Inflector::SHORT, $gender = Inflector::MALE, $case = Inflector::NOMINATIVE)
+	{
+		if (!in_array($case, Inflector::getAllCases()))
+			throw new InvalidArgumentException('Case "'.$case.'" is not supported.');
+		return $this->inflector->cardinalize($number, $form, $gender, $case);
+	}
+
+	/**
+	 * @param integer $number
+	 * @param integer $form
+	 * @param integer $gender
+	 * @param integer $case
+	 * @return string
+	 */
+	public function ordinalize($number, $form = Inflector::SHORT, $gender = Inflector::MALE, $case = Inflector::NOMINATIVE)
+	{
+		if (!in_array($case, Inflector::getAllCases()))
+			throw new InvalidArgumentException('Case "'.$case.'" is not supported.');
+		return $this->inflector->ordinalize($number, $form, $gender, $case);
+	}
+
+	/**
+	 * @param integer $currency
+	 * @param integer|float $value
+	 * @return string
+	 */
+	public function monetize($currency, $value)
+	{
+		if (!in_array($currency, Inflector::getAllCurrencies()))
+			throw new InvalidArgumentException('Currency "'.$currency.'" is not supported.');
+		return $this->inflector->monetize($currency, $value);
+	}
+
+	/**
+	 * @param DateInterval $interval
+	 * @return string
+	 */
+	public function textizeTimeRange(DateInterval $interval)
+	{
+		return $this->inflector->textizeTimeRange($interval);
 	}
 }

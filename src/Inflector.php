@@ -3,7 +3,7 @@ namespace wapmorgan\yii2inflection;
 
 use DateInterval;
 
-interface Inflector
+abstract class Inflector
 {
 	const SHORT = 1;
 	const FULL = 2;
@@ -43,13 +43,61 @@ interface Inflector
 	const RAND = 14;
 	const HRYVNIA = 15;
 
-	public function pluralizeWord($word);
-	public function pluralize($count, $word);
-	public function inflectName($name, $case, $gender = null);
-	public function inflectGeoName($name, $case);
-	public function inflectWord($word, $case);
-	public function cardinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE);
-	public function ordinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE);
-	public function monetize($currency, $value);
-	public function timeRangeTextize(DateInterval $interval);
+	abstract public function pluralizeWord($word);
+	abstract public function pluralize($count, $word);
+	abstract public function inflectName($name, $case, $gender = null);
+	abstract public function inflectGeoName($name, $case);
+	abstract public function inflectWord($word, $case);
+	abstract public function cardinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE);
+	abstract public function ordinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE);
+	abstract public function monetize($currency, $value);
+	abstract public function textizeTimeRange(DateInterval $interval);
+
+	/**
+	 * @return array
+	 */
+	public static function getAllCurrencies()
+	{
+		return [
+			static::DOLLAR,
+			static::EURO,
+			static::YEN,
+			static::POUND,
+			static::FRANC,
+			static::YUAN,
+			static::KRONA,
+			static::PESO,
+			static::WON,
+			static::LIRA,
+			static::RUBLE,
+			static::RUPEE,
+			static::REAL,
+			static::RAND,
+			static::HRYVNIA,
+		];
+	}
+
+	/**
+	 * @return array
+	 */
+	public static function getAllCases()
+	{
+		return [
+			static::NOMINATIVE,
+			static::ABLATIVE,
+			static::AVERSIVE,
+			static::BENEFACTIVE,
+			static::CAUSAL,
+			static::COMITATIVE,
+			static::DATIVE,
+			static::DISTRIBUTIVE,
+			static::GENITIVE,
+			static::ORNATIVE,
+			static::POSSESSED,
+			static::POSSESSIVE,
+			static::PRIVATIVE,
+			static::SEMBLATIVE,
+			static::SOCIATIVE,
+		];
+	}
 }
