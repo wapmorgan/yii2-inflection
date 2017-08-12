@@ -13,8 +13,7 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
   
 2. **Inflect names to relational cases (applicable in Russian only)**:
   - `ru`: `Yii::$app->inflection->inflectName('Иванов Петр', wapmorgan\yii2inflector\Inflector::DATIVE)` => `Иванову Петру`
-  
-  _Description of all supported cases are in [Cases](#cases) section.
+  - _Description of all supported cases are in [Cases](#cases) section._
   
 3. **Inflect geographical names to relational cases (applicable in Russian only)**:
   - `ru`: `Yii::$app->inflection->inflectGeoName('Санкт-Петербург', , wapmorgan\yii2inflector\Inflector::GENITIVE)` => `Санкт-Петербурга`
@@ -34,8 +33,7 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
 6. **Money to words**:
   - `en`: `Yii::$app->inflection->monetize(wapmorgan\yii2inflection\DOLLAR, 122.04)` => 'one hundred twenty-two dollars four cents'
   - `ru`: `Yii::$app->inflection->monetize(wapmorgan\yii2inflection\DOLLAR, 122.04)` => 'сто двадцать два доллара четыре цента'
-  
-  _Description of all supported currencies are in [Currencies](#currencies) section.
+  - _Description of all supported currencies are in [Currencies](#currencies) section.
   
 7. **Data range to words**:
   - `ru`: `Yii::$app->inflection->textizeTimeRange(new DateInterval('P2Y'))` => '2 года'
