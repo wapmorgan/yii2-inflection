@@ -3,6 +3,7 @@
     "description": "Inflection extension for Yii2. Support for English / Russian languages to inflect words / names / numbers / money / date&time.",
     "keywords": ["yii2", "inflection", "english", "russian"],
     "type": "yii2-extension",
+    "license": "GPLv3",
     "autoload": {
         "psr-4": {
             "wapmorgan\\yii2inflection\\": "src/"
