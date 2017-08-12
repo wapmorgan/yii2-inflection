@@ -28,13 +28,13 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
   
   And full form:
   
-    - `en`: `Yii::$app->inflection->cardinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'second'
-    - `ru`: `Yii::$app->inflection->cardinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'второй'
+  - `en`: `Yii::$app->inflection->cardinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'second'
+  - `ru`: `Yii::$app->inflection->cardinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'второй'
 
 6. **Money to words**:
   - `en`: `Yii::$app->inflection->monetize(wapmorgan\yii2inflection\DOLLAR, 122.04)` => 'one hundred twenty-two dollars four cents'
   - `ru`: `Yii::$app->inflection->monetize(wapmorgan\yii2inflection\DOLLAR, 122.04)` => 'сто двадцать два доллара четыре цента'
-  - _Description of all supported currencies are in [Currencies](#currencies) section.
+  - _Description of all supported currencies are in [Currencies](#currencies) section._
   
 7. **Data range to words**:
   - `ru`: `Yii::$app->inflection->textizeTimeRange(new DateInterval('P2Y'))` => '2 года'
