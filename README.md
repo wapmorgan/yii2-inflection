@@ -98,12 +98,13 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
     // ...
   ];
   ```
-  Optional service parameters:
-  - `language` - default language for inflection. Currently supported langs is `ru` (Russian) and `en` (English). If you passed unsupported or unknown language, an Exception will be throwed during service initializion. By default, it uses **language** parameter of current application.
-3. Call any methods describing below in controllers / commands / views.
+  - Optional service parameters:
+  	- `language` - default language for inflection. Currently supported langs is `ru` (Russian) and `en` (English). If you passed unsupported or unknown language, an Exception will be throwed during service initializion. By default, it uses **language** parameter of current application.
+  
+3. Call any methods described above in a controller / command / view.
   ```php
   $word = 'новость';
   
   echo Yii::$app->inflection->pluralize(rand(2, 139), $word).PHP_EOL;
-	echo Yii::$app->inflection->pluralize(rand(9, 69), $word).PHP_EOL;
+  echo Yii::$app->inflection->pluralize(rand(9, 69), $word).PHP_EOL;
   ```
