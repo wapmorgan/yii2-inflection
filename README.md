@@ -4,7 +4,8 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
 1. [Features](#features)
 	- [Cases](#cases)
 	- [Currencies](#cases)
-4. [Installation](#installation)
+2. [How does it work](#how-does-it-work)
+3. [Installation](#installation)
 
 ## Features
 1. **Pluralize word with number**:
@@ -78,6 +79,9 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
 | `Inflector::REAL`    |
 | `Inflector::RAND`    |
 | `Inflector::HRYVNIA` |
+
+## How does it work
+It uses built-in inflector for English (`yii\helpers\Inflector`) and [Morphos](https://github.com/wapmorgan/Morphos) for Russian for on-the-fly inflection and generation (without dictionaries).
 
 ## Installation
 1. Install extension
