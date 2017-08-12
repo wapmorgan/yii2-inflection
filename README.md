@@ -4,7 +4,7 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
 1. [Features](#features)
 	- [Cases](#cases)
 	- [Currencies](#cases)
-4. [Installation](#installation
+4. [Installation](#installation)
 
 ## Features
 1. **Pluralize word with number**:
