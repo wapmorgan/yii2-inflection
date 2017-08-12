@@ -28,13 +28,13 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
   - `ru`: `Yii::$app->inflection->cardinalize(2)` => 'два'
 
 5. **Generate ordinal numerals**:
-  - `en`: `Yii::$app->inflection->cardinalize(2)` => '2nd'
-  - `ru`: `Yii::$app->inflection->cardinalize(2)` => '2-й'
+  - `en`: `Yii::$app->inflection->ordinalize(2)` => '2nd'
+  - `ru`: `Yii::$app->inflection->ordinalize(2)` => '2-й'
   
   And full form:
   
-  - (_WIP_) `en`: `Yii::$app->inflection->cardinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'second'
-  - `ru`: `Yii::$app->inflection->cardinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'второй'
+  - (_WIP_) `en`: `Yii::$app->inflection->ordinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'second'
+  - `ru`: `Yii::$app->inflection->ordinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'второй'
 
 6. **Money to words**:
   - (_WIP_) `en`: `Yii::$app->inflection->monetize(wapmorgan\yii2inflection\DOLLAR, 122.04)` => 'one hundred twenty-two dollars four cents'
