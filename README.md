@@ -27,6 +27,7 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
   - `ru`: `Yii::$app->inflection->cardinalize(2)` => '2-й'
   
   And full form:
+  
     - `en`: `Yii::$app->inflection->cardinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'second'
     - `ru`: `Yii::$app->inflection->cardinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'второй'
 
