@@ -9,7 +9,7 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
 2. Inflect names to relational cases (applicable in Russian only):
   - `ru`: `Yii::$app->inflection->inflectName('Иванов Петр', wapmorgan\yii2inflector\Inflector::DATIVE)` => `Иванову Петру`
   
-  Description of all supported cases in Russian are desribed in **[Languages](#languages)** section.
+  Description of all supported cases are desribed in **[Cases](#cases)** section.
   
 3. Inflect geographical names to relational cases (application in Russian only):
   - `ru`: `Yii::$app->inflection->inflectGeoName('Санкт-Петербург', , wapmorgan\yii2inflector\Inflector::GENITIVE)` => `Санкт-Петербурга`
@@ -32,6 +32,26 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
   
 7. Data range to words:
   - `ru`: `Yii::$app->inflection->textizeTimeRange(new DateInterval('P2Y'))` => '2 года'
+  
+## Cases
+
+| Case                      | Russian      |
+|---------------------------|--------------|
+| `Inflector::NOMINATIVE`   | Именительный |
+| `Inflector::ABLATIVE`     | Творительный |
+| `Inflector::AVERSIVE`     |              |
+| `Inflector::BENEFACTIVE`  |              |
+| `Inflector::CAUSAL`       |              |
+| `Inflector::COMITATIVE`   |              |
+| `Inflector::DATIVE`       | Дательный    |
+| `Inflector::DISTRIBUTIVE` |              |
+| `Inflector::GENITIVE`     | Родительный  |
+| `Inflector::ORNATIVE`     |              |
+| `Inflector::POSSESSED`    |              |
+| `Inflector::POSSESSIVE`   |              |
+| `Inflector::PRIVATIVE`    |              |
+| `Inflector::SEMBLATIVE`   |              |
+| `Inflector::SOCIATIVE`    |              |
 
 ## Installation
 1. Install extension
