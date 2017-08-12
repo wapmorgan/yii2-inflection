@@ -1,5 +1,8 @@
 {
     "name": "wapmorgan/yii2-inflection",
+    "description": "Inflection extension for Yii2. Support for English / Russian languages to inflect words / names / numbers / money / date&time.",
+    "keywords": ["yii2", "inflection", "english", "russian"],
+    "type": "yii2-extension",
     "autoload": {
         "psr-4": {
             "wapmorgan\\yii2inflection\\": "src/"
@@ -7,6 +10,6 @@
     },
     "require": {
         "yiisoft/yii2": "^2.0",
-        "wapmorgan/morphos": "dev-master"
+        "wapmorgan/morphos": "~3.2.2"
     }
 }
