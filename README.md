@@ -7,7 +7,7 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
 
 1. [Features](#features)
   - [Cases](#cases)
-  - [Currencies](#cases)
+  - [Currencies](#currencies)
 2. [How does it work](#how-does-it-work)
 3. [Installation](#installation)
 
