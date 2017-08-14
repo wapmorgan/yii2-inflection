@@ -21,6 +21,11 @@ class Inflection extends Component
 	 */
 	protected $inflector;
 
+    /**
+     * @var null|integer Default currency. Will be used {@link Inflection::monetize()} if no currency provided.
+     */
+    protected $defaultCurrency;
+
 	/**
 	 * @var array List of supported languages
 	 */
@@ -50,6 +55,10 @@ class Inflection extends Component
 		}
 	}
 
+    /**
+     * Set inflection primary language
+     * @param string $lang Language
+     */
 	public function setLanguage($lang)
 	{
 		$lang = strtolower($lang);
@@ -62,6 +71,34 @@ class Inflection extends Component
 
 		$this->language = $lang;
 	}
+
+    /**
+     * Sets default currency for monetize() method
+     * @param null|integer $currency
+     */
+	public function setDefaultCurrency($currency)
+    {
+        if ($currency !== null && !in_array($currency, [
+            Inflector::DOLLAR,
+            Inflector::EURO,
+            Inflector::YEN,
+            Inflector::POUND,
+            Inflector::FRANC,
+            Inflector::YUAN,
+            Inflector::KRONA,
+            Inflector::PESO,
+            Inflector::WON,
+            Inflector::LIRA,
+            Inflector::RUBLE,
+            Inflector::RUPEE,
+            Inflector::REAL,
+            Inflector::RAND,
+            Inflector::HRYVNIA
+        ]))
+            throw new InvalidArgumentException('Currency "'.$currency.'" is not supported for inflection.');
+
+        $this->defaultCurrency = $currency;
+    }
 
 	/**
 	 * @param integer|string $countOrWord
@@ -128,15 +165,20 @@ class Inflection extends Component
 	}
 
 	/**
-	 * @param integer $currency
-	 * @param integer|float $value
+	 * @param integer $currencyOrValue
+	 * @param null|integer|float $value
 	 * @return string
 	 */
-	public function monetize($currency, $value)
+	public function monetize($currencyOrValue, $value = null)
 	{
-		if (!in_array($currency, Inflector::getAllCurrencies()))
-			throw new InvalidArgumentException('Currency "'.$currency.'" is not supported.');
-		return $this->inflector->monetize($currency, $value);
+	    if ($value !== null) {
+            if (!in_array($currencyOrValue, Inflector::getAllCurrencies()))
+                throw new InvalidArgumentException('Currency "'.$currencyOrValue.'" is not supported.');
+
+            return $this->inflector->monetize($currencyOrValue, $value);
+        } else if ($this->defaultCurrency !== null) {
+            return $this->inflector->monetize($this->defaultCurrency, $currencyOrValue);
+        }
 	}
 
 	/**
