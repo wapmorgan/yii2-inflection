@@ -37,8 +37,8 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
   - `ru`: `Yii::$app->inflection->ordinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'второй'
 
 6. **Money to words**:
-  - (_WIP_) `en`: `Yii::$app->inflection->monetize(wapmorgan\yii2inflection\DOLLAR, 122.04)` => 'one hundred twenty-two dollars four cents'
-  - `ru`: `Yii::$app->inflection->monetize(wapmorgan\yii2inflection\DOLLAR, 122.04)` => 'сто двадцать два доллара четыре цента'
+  - (_WIP_) `en`: `Yii::$app->inflection->monetize(wapmorgan\yii2inflection\Inflector::DOLLAR, 122.04)` => 'one hundred twenty-two dollars four cents'
+  - `ru`: `Yii::$app->inflection->monetize(wapmorgan\yii2inflection\Inflector::DOLLAR, 122.04)` => 'сто двадцать два доллара четыре цента'
   - _Description of all supported currencies are in [Currencies](#currencies) section._
   
 7. **Data range to words**:
