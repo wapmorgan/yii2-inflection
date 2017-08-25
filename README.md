@@ -112,7 +112,7 @@ It uses built-in inflector for English pluralization (`yii\helpers\Inflector`) a
   ```
 
   - Optional service parameters:
-    - `language` - default language for inflection. By default, it uses **language** parameter of current application, but you can this behavior. Currently supported langs is `ru` (Russian) and `en` (English) or it's modification (`ru_RU`, `en_US`). If you pass unsupported or unknown language, an Exception will be thrown during service initializion. 
+    - `language` - default language for inflection. By default, it uses **language** parameter of current application, but you can change this behavior. Currently supported langs is `ru` (Russian) and `en` (English) or their's modification (`ru_RU`, `en_US`). If you pass unsupported or unknown language, an Exception will be thrown during service initializion. 
     - `defaultCurrency` - default currency when converting money to words. If set, you can call `monetize(float $value)` without currency: `Yii::$app->inflection->monetize(123.45)` => `сто двадцать три рубля сорок пять копеек`
 
 3. Call any methods described above in a controller / command / view.
