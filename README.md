@@ -88,7 +88,7 @@ _WIP_ means Work-in-progress i.e this feature is not supported now, but planned 
 | `Inflector::HRYVNIA` |
 
 ## How does it work
-It uses built-in inflector for English pluralization (`yii\helpers\Inflector`) and [Morphos](https://github.com/wapmorgan/Morphos) for English & Russian for on-the-fly inflection (without dictionaries).
+It uses built-in inflector for English pluralization (`yii\helpers\Inflector`) and [Morphos](https://github.com/wapmorgan/Morphos) for English & Russian on-the-fly inflection (without dictionaries).
 
 ## Installation
 1. Install extension
