@@ -27,31 +27,31 @@ class EnglishInflector extends Inflector
 
     public function monetize($currency, $value)
     {
-        // ...
+        return $value.' '.$currency;
     }
 
     public function textizeTimeRange(DateInterval $interval)
     {
-        // ...
+        return null;
     }
 
     public function cardinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE)
-	{
-		// ...
-	}
+    {
+        return null;
+    }
 
-	public function inflectGeoName($name, $case)
-	{
-		// ...
-	}
+    public function inflectGeoName($name, $case)
+    {
+        return $name;
+    }
 
-	public function inflectName($name, $case, $gender = null)
-	{
-		// ...
-	}
+    public function inflectName($name, $case, $gender = null)
+    {
+        return $name;
+    }
 
-	public function inflectWord($word, $case)
-	{
-		// ...
-	}
+    public function inflectWord($word, $case)
+    {
+        return $word;
+    }
 }
