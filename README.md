@@ -21,7 +21,7 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
   - _Description of all supported cases are in [Cases](#cases) section._
 
 3. **Inflect geographical names to relational cases (applicable in Russian only)**:
-  - `ru`: `Yii::$app->inflection->inflectGeoName('Санкт-Петербург', , wapmorgan\yii2inflector\Inflector::GENITIVE)` => `Санкт-Петербурга`
+  - `ru`: `Yii::$app->inflection->inflectGeoName('Санкт-Петербург', wapmorgan\yii2inflector\Inflector::GENITIVE)` => `Санкт-Петербурга`
 
 4. **Generate cardinal numerals**:
   - `en`: `Yii::$app->inflection->cardinalize(2)` => 'two'
