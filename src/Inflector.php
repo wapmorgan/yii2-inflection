@@ -48,7 +48,7 @@ abstract class Inflector
 	abstract public function inflectName($name, $case, $gender = null);
 	abstract public function inflectGeoName($name, $case);
 	abstract public function inflectWord($word, $case);
-	abstract public function cardinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE);
+	abstract public function cardinalize($number, $gender = self::MALE, $case = self::NOMINATIVE);
 	abstract public function ordinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE);
 	abstract public function monetize($currency, $value);
 	abstract public function textizeTimeRange(DateInterval $interval);

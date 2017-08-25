@@ -69,15 +69,11 @@ class RussianInflector extends Inflector
         return \morphos\Russian\GeographicalNamesInflection::getCase($name, $case);
     }
 
-    public function cardinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE)
+    public function cardinalize($number, $gender = self::MALE, $case = self::NOMINATIVE)
     {
         $case = static::transformCase($case);
         $gender = static::transformGender($gender);
-        if ($form == self::FULL)
-            return \morphos\Russian\CardinalNumeralGenerator::getCase($number, $case, $gender);
-
-        $cardinal = \morphos\Russian\CardinalNumeralGenerator::getCase($number, $case, $gender);
-        return $number.'-'.\morphos\S::last_position_for_one_of_chars($cardinal, \morphos\Russian\RussianLanguage::$consonants);
+        return \morphos\Russian\CardinalNumeralGenerator::getCase($number, $case, $gender);
     }
 
     public function ordinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE)

@@ -78,23 +78,7 @@ class Inflection extends Component
      */
 	public function setDefaultCurrency($currency)
     {
-        if ($currency !== null && !in_array($currency, [
-            Inflector::DOLLAR,
-            Inflector::EURO,
-            Inflector::YEN,
-            Inflector::POUND,
-            Inflector::FRANC,
-            Inflector::YUAN,
-            Inflector::KRONA,
-            Inflector::PESO,
-            Inflector::WON,
-            Inflector::LIRA,
-            Inflector::RUBLE,
-            Inflector::RUPEE,
-            Inflector::REAL,
-            Inflector::RAND,
-            Inflector::HRYVNIA
-        ]))
+        if ($currency !== null && !in_array($currency, Inflector::getAllCurrencies()))
             throw new InvalidArgumentException('Currency "'.$currency.'" is not supported for inflection.');
 
         $this->defaultCurrency = $currency;
@@ -138,16 +122,15 @@ class Inflection extends Component
 
 	/**
 	 * @param integer $number
-	 * @param integer $form
 	 * @param integer $gender
 	 * @param integer $case
 	 * @return string
 	 */
-	public function cardinalize($number, $form = Inflector::SHORT, $gender = Inflector::MALE, $case = Inflector::NOMINATIVE)
+	public function cardinalize($number, $gender = Inflector::MALE, $case = Inflector::NOMINATIVE)
 	{
 		if (!in_array($case, Inflector::getAllCases()))
 			throw new InvalidArgumentException('Case "'.$case.'" is not supported.');
-		return $this->inflector->cardinalize($number, $form, $gender, $case);
+		return $this->inflector->cardinalize($number, $gender, $case);
 	}
 
 	/**

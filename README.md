@@ -24,7 +24,7 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
   - `ru`: `Yii::$app->inflection->inflectGeoName('Санкт-Петербург', , wapmorgan\yii2inflector\Inflector::GENITIVE)` => `Санкт-Петербурга`
 
 4. **Generate cardinal numerals**:
-  - (_WIP_) `en`: `Yii::$app->inflection->cardinalize(2)` => 'two'
+  - `en`: `Yii::$app->inflection->cardinalize(2)` => 'two'
   - `ru`: `Yii::$app->inflection->cardinalize(2)` => 'два'
 
 5. **Generate ordinal numerals**:
@@ -33,7 +33,7 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
 
   And full form:
 
-  - (_WIP_) `en`: `Yii::$app->inflection->ordinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'second'
+  - `en`: `Yii::$app->inflection->ordinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'second'
   - `ru`: `Yii::$app->inflection->ordinalize(2, wapmorgan\yii2inflection\Inflector::FULL)` => 'второй'
 
 6. **Money to words**:

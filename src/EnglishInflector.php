@@ -14,7 +14,7 @@ class EnglishInflector extends Inflector
 
     public function pluralize($count, $word)
     {
-        if ($count === 1)
+        if ((int)$count === 1)
             return '1 '.$word;
         else
             return $count.' '.$this->pluralizeWord($word);
@@ -22,22 +22,22 @@ class EnglishInflector extends Inflector
 
     public function ordinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE)
     {
-        return YiiInflector::ordinalize($number);
+        return \morphos\English\OrdinalNumeralGenerator::generate($number, $form === self::SHORT);
     }
 
     public function monetize($currency, $value)
     {
-        return $value.' '.$currency;
+        return $value;
     }
 
     public function textizeTimeRange(DateInterval $interval)
     {
-        return null;
+        return \morphos\English\TimeSpeller::spellInterval($interval);
     }
 
-    public function cardinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE)
+    public function cardinalize($number, $gender = self::MALE, $case = self::NOMINATIVE)
     {
-        return null;
+        return \morphos\English\CardinalNumeralGenerator::generate($number);
     }
 
     public function inflectGeoName($name, $case)
