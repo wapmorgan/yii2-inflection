@@ -95,10 +95,11 @@ It uses built-in inflector for English pluralization (`yii\helpers\Inflector`) a
   ```bash
   composer require wapmorgan/yii2-inflection
   ```
-2. Add `wapmorgan\yii2inflection\Inflection` as a service `inflection` in config (**web.php** or **console.php**):
+2. Add `wapmorgan\yii2inflection\Inflection` as a service `inflection` in config and specify proper target language of your application (**web.php** or **console.php**):
   ```php
   $config = [
     // ...
+    'language' => 'ru_RU', // for example, Russian
     // ...
     'components' => [
       // ...
@@ -110,15 +111,9 @@ It uses built-in inflector for English pluralization (`yii\helpers\Inflector`) a
   ];
   ```
 
-  By default, extension uses application's language. So don't forget specify proper target language of your application:
-  ```php
-    'language' => 'ru_RU', // for example, Russian
-  ```
-
   - Optional service parameters:
-    - `language` - default language for inflection. Currently supported langs is `ru` (Russian) and `en` (English). If you passed unsupported or unknown language, an Exception will be throwed during service initializion. By default, it uses **language** parameter of current application.
-    - `defaultCurrency` - default currency when converting money to words. If set, call `monetize(float value)` without currency: `Yii::$app->inflection->monetize(123.45)` => `сто двадцать три рубля сорок пять копеек`
-
+    - `language` - default language for inflection. By default, it uses **language** parameter of current application, but you can this behavior. Currently supported langs is `ru` (Russian) and `en` (English) or it's modification (`ru_RU`, `en_US`). If you pass unsupported or unknown language, an Exception will be thrown during service initializion. 
+    - `defaultCurrency` - default currency when converting money to words. If set, you can call `monetize(float $value)` without currency: `Yii::$app->inflection->monetize(123.45)` => `сто двадцать три рубля сорок пять копеек`
 
 3. Call any methods described above in a controller / command / view.
   ```php
