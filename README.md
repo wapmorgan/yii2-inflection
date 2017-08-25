@@ -6,8 +6,8 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
 [![License](https://poser.pugx.org/wapmorgan/yii2-inflection/license)](https://packagist.org/packages/wapmorgan/yii2-inflection)
 
 1. [Features](#features)
-  - [Cases](#cases)
-  - [Currencies](#currencies)
+    - [Cases](#cases)
+    - [Currencies](#currencies)
 2. [How does it work](#how-does-it-work)
 3. [Installation](#installation)
 
