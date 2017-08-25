@@ -42,7 +42,7 @@ Inflection _extension_ for Yii2. Support for English / Russian languages to infl
   - _Description of all supported currencies are in [Currencies](#currencies) section._
 
 7. **Data range to words**:
-  - (_WIP_) `en`: `Yii::$app->inflection->textizeTimeRange(new DateInterval('P2Y'))` => '2 years'
+  - `en`: `Yii::$app->inflection->textizeTimeRange(new DateInterval('P2Y'))` => '2 years'
   - `ru`: `Yii::$app->inflection->textizeTimeRange(new DateInterval('P2Y'))` => '2 года'
 
 _WIP_ means Work-in-progress i.e this feature is not supported now, but planned to be implemented.
