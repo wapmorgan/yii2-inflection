@@ -1,7 +1,7 @@
 # yii2-inflection
 Inflection _extension_ for Yii2. Support for English / Russian languages to inflect words / names / numbers / money / date&amp;time.
 
-[![Composer package](http://xn--e1adiijbgl.xn--p1acf/badge/wapmorgan/yii2-inflection)](https://packagist.org/packages/wapmorgan/yii2-inflection)
+[![Composer package](http://composer.network/badge/wapmorgan/yii2-inflection)](https://packagist.org/packages/wapmorgan/yii2-inflection)
 [![Latest Stable Version](https://poser.pugx.org/wapmorgan/yii2-inflection/v/stable)](https://packagist.org/packages/wapmorgan/yii2-inflection)
 [![License](https://poser.pugx.org/wapmorgan/yii2-inflection/license)](https://packagist.org/packages/wapmorgan/yii2-inflection)
 [![Testing](https://travis-ci.org/wapmorgan/yii2-inflection.svg)](https://travis-ci.org/wapmorgan/yii2-inflection)
