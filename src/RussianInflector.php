@@ -12,8 +12,10 @@ class RussianInflector extends Inflector
     protected static $casesMap = [
         Inflector::NOMINATIVE => Cases::NOMINATIVE,
         Inflector::ABLATIVE => Cases::ABLATIVE,
+        Inflector::ACCUSATIVE => Cases::ACCUSATIVE,
         Inflector::DATIVE => Cases::DATIVE,
         Inflector::GENITIVE => Cases::GENETIVE,
+        Inflector::PREPOSITIONAL => Cases::PREPOSITIONAL,
     ];
 
     protected static $gendersMap = [

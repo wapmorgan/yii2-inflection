@@ -13,19 +13,21 @@ abstract class Inflector
 
 	const NOMINATIVE = 1;
 	const ABLATIVE = 2;
-	const AVERSIVE = 3;
-	const BENEFACTIVE = 4;
-	const CAUSAL = 5;
-	const COMITATIVE = 6;
-	const DATIVE = 7;
-	const DISTRIBUTIVE = 8;
-	const GENITIVE = 9;
-	const ORNATIVE = 10;
-	const POSSESSED = 11;
-	const POSSESSIVE = 12;
-	const PRIVATIVE = 13;
-	const SEMBLATIVE = 14;
-	const SOCIATIVE = 15;
+	const ACCUSATIVE = 3;
+	const AVERSIVE = 4;
+	const BENEFACTIVE = 5;
+	const CAUSAL = 6;
+	const COMITATIVE = 7;
+	const DATIVE = 8;
+	const DISTRIBUTIVE = 9;
+	const GENITIVE = 10;
+	const ORNATIVE = 11;
+	const POSSESSED = 12;
+	const POSSESSIVE = 13;
+	const PREPOSITIONAL = 14;
+	const PRIVATIVE = 15;
+	const SEMBLATIVE = 16;
+	const SOCIATIVE = 17;
 
 	const DOLLAR = 1;
 	const EURO = 2;
@@ -85,6 +87,7 @@ abstract class Inflector
 		return [
 			static::NOMINATIVE,
 			static::ABLATIVE,
+			static::ACCUSATIVE,
 			static::AVERSIVE,
 			static::BENEFACTIVE,
 			static::CAUSAL,
@@ -95,6 +98,7 @@ abstract class Inflector
 			static::ORNATIVE,
 			static::POSSESSED,
 			static::POSSESSIVE,
+			static::PREPOSITIONAL,
 			static::PRIVATIVE,
 			static::SEMBLATIVE,
 			static::SOCIATIVE,

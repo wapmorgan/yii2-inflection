@@ -27,15 +27,19 @@ class RussianInflectorTest extends \PHPUnit_Framework_TestCase
 	public function testInflectName()
 	{
 		$this->assertEquals('Иванова Петра Викторовича', $this->inflector->inflectName('Иванов Петр Викторович', Inflector::GENITIVE));
+        $this->assertEquals('Иванова Петра Викторовича', $this->inflector->inflectName('Иванов Петр Викторович', Inflector::ACCUSATIVE));
 		$this->assertEquals('Иванову Петру Викторовичу', $this->inflector->inflectName('Иванов Петр Викторович', Inflector::DATIVE));
 		$this->assertEquals('Ивановым Петром Викторовичем', $this->inflector->inflectName('Иванов Петр Викторович', Inflector::ABLATIVE));
+        $this->assertEquals('Иванове Петре Викторовиче', $this->inflector->inflectName('Иванов Петр Викторович', Inflector::PREPOSITIONAL));
 	}
 
 	public function testInflectGeoName()
 	{
 		$this->assertEquals('Москвы', $this->inflector->inflectGeoName('Москва', Inflector::GENITIVE));
+        $this->assertEquals('Москву', $this->inflector->inflectGeoName('Москву', Inflector::ACCUSATIVE));
 		$this->assertEquals('Москве', $this->inflector->inflectGeoName('Москва', Inflector::DATIVE));
 		$this->assertEquals('Москвой', $this->inflector->inflectGeoName('Москва', Inflector::ABLATIVE));
+        $this->assertEquals('Москве', $this->inflector->inflectGeoName('Москва', Inflector::PREPOSITIONAL));
 	}
 
 	public function testCardinalize()
