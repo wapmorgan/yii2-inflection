@@ -95,10 +95,13 @@ It uses built-in inflector for English pluralization (`yii\helpers\Inflector`) a
 
 ## Installation
 1. Install extension
+
   ```bash
   composer require wapmorgan/yii2-inflection
   ```
+
 2. Add `wapmorgan\yii2inflection\Inflection` as a service `inflection` in config and specify proper target language of your application (**web.php** or **console.php**):
+
   ```php
   $config = [
     // ...
@@ -119,6 +122,7 @@ It uses built-in inflector for English pluralization (`yii\helpers\Inflector`) a
     - `defaultCurrency` - default currency when converting money to words. If set, you can call `monetize(float $value)` without currency: `Yii::$app->inflection->monetize(123.45)` => `сто двадцать три рубля сорок пять копеек`
 
 3. Call any methods described above in a controller / command / view.
+
   ```php
   $word = 'новость';
   echo Yii::$app->inflection->pluralize(rand(2, 139), $word).PHP_EOL;
