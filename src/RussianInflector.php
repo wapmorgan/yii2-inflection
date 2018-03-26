@@ -86,7 +86,7 @@ class RussianInflector extends Inflector
             return \morphos\Russian\OrdinalNumeralGenerator::getCase($number, $case, $gender);
 
         $ordinal = \morphos\Russian\OrdinalNumeralGenerator::getCase($number, $case, $gender);
-        return $number.'-'.\morphos\S::last_position_for_one_of_chars($ordinal, \morphos\Russian\RussianLanguage::$consonants);
+        return $number.'-'.\morphos\S::findLastPositionForOneOfChars($ordinal, \morphos\Russian\RussianLanguage::$consonants);
     }
 
     public function monetize($currency, $value)
