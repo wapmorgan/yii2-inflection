@@ -45,15 +45,72 @@ abstract class Inflector
 	const RAND = 14;
 	const HRYVNIA = 15;
 
-	abstract public function pluralizeWord($word);
-	abstract public function pluralize($count, $word);
-	abstract public function inflectName($name, $case, $gender = null);
-	abstract public function inflectGeoName($name, $case);
-	abstract public function inflectWord($word, $case);
-	abstract public function cardinalize($number, $gender = self::MALE, $case = self::NOMINATIVE);
-	abstract public function ordinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE);
-	abstract public function monetize($currency, $value);
-	abstract public function textizeTimeRange(DateInterval $interval);
+    /**
+     * @param string $word Pluralize passed noun
+     * @return string
+     */
+    abstract public function pluralizeWord($word);
+
+    /**
+     * @param int $count Count of objects
+     * @param string $word Noun
+     * @return string
+     */
+    abstract public function pluralize($count, $word);
+
+
+    /**
+     * @param string $name Personal name
+     * @param string $case Case to inflect to
+     * @param null|int $gender Gender of person
+     * @return string
+     */
+    abstract public function inflectName($name, $case, $gender = null);
+
+    /**
+     * @param string $name Name of geographical object
+     * @param string $case Case to inflect to
+     * @return string
+     */
+    abstract public function inflectGeoName($name, $case);
+
+    /**
+     * @param string $word Word to be inflected
+     * @param string $case Case to inflect to
+     * @return string
+     */
+    abstract public function inflectWord($word, $case);
+
+
+    /**
+     * @param int $number Count of objects
+     * @param int $gender Gender of object
+     * @param int $case Case to inflect to
+     * @return string
+     */
+    abstract public function cardinalize($number, $gender = self::MALE, $case = self::NOMINATIVE);
+
+    /**
+     * @param int $number Count of objects
+     * @param int $form Form of result
+     * @param int $gender Gender of object
+     * @param int $case   Case to inflect to
+     * @return string
+     */
+    abstract public function ordinalize($number, $form = self::SHORT, $gender = self::MALE, $case = self::NOMINATIVE);
+
+    /**
+     * @param int $currency Currency
+     * @param int|float|string $value Amount of money
+     * @return string
+     */
+    abstract public function monetize($currency, $value);
+
+    /**
+     * @param \DateInterval $interval
+     * @return string
+     */
+    abstract public function textizeTimeRange(DateInterval $interval);
 
 	/**
 	 * @return array
